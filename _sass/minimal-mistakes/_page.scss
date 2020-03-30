@@ -30,9 +30,7 @@ body {
           flex-direction: column;
 }
 
-.initial-content,
-.search-content {
-  flex: 1 0 auto;
+.initial-content {
   max-width: 1024px;
   min-width: 425px;
   margin-top: 160px;
@@ -40,6 +38,10 @@ body {
   margin-right: auto;
   padding: 0 8px;
   height: 100%;
+}
+.search-content {
+  flex: 1 0 auto;
+  
 }
 
 .page {
