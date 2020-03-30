@@ -1,28 +1,29 @@
 ---
 layout: post
-title: "javascript"
+title: "JavaScript"
 ---
 
-기본형과 참조형의 종류 및 차이점
-기본형 Primitive Type {
-    number
-    string
-    boolean
-    null
-    undefined
-    symbol
-} 값을 그대로 할당
-참조형 Reference Type{
-    objrct {
-        Array
-        function
-        RegExp 정규표현식
-        map
-        set
-        weekmap
-        weekset
-    }
-}값이 저장된 주소값 할당(참조)
+#기본형과 참조형의 종류 및 차이점
+*기본형 Primitive Type 
+    -number
+    -string
+    -boolean
+    -null
+    -undefined
+    -symbol
+값을 그대로 할당
+
+*참조형 Reference Type
+    -objrct 
+        +Array
+        +function
+        +RegExp 정규표현식
+        +map
+        +set
+        +weekmap
+        +weekset
+    
+값이 저장된 주소값 할당(참조)
 
 호이스팅(끌어올리다)
 
