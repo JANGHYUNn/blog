@@ -3,6 +3,9 @@ layout: post
 title: "JavaScript"
 ---
 
+JavaScript
+==========
+
 # 기본형과 참조형의 종류 및 차이점
 * 기본형 Primitive Type 
     - number
