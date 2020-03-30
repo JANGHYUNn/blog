@@ -3,29 +3,29 @@ layout: post
 title: "JavaScript"
 ---
 
-#기본형과 참조형의 종류 및 차이점
-*기본형 Primitive Type 
-    -number
-    -string
-    -boolean
-    -null
-    -undefined
-    -symbol
+# 기본형과 참조형의 종류 및 차이점
+* 기본형 Primitive Type 
+    - number
+    - string
+    - boolean
+    - null
+    - undefined
+    - symbol
 값을 그대로 할당
 
-*참조형 Reference Type
-    -objrct 
-        +Array
-        +function
-        +RegExp 정규표현식
-        +map
-        +set
-        +weekmap
-        +weekset
+* 참조형 Reference Type
+    - objrct 
+        + Array
+        + function
+        + RegExp 정규표현식
+        + map
+        + set
+        + weekmap
+        + weekset
     
 값이 저장된 주소값 할당(참조)
 
-호이스팅(끌어올리다)
+# 호이스팅(끌어올리다)
 
 변수 선언과 함수 선언을 끌어올린다
 자바스크립트 엔진은 선언한(변수,함수) 내용이 있는지 살펴보고 있는족족 위로 끌어올린다.
