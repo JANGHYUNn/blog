@@ -181,12 +181,8 @@
   a {
     display: block;
     margin: 0 1rem;
-    color: $masthead-link-color;
+    color: #f2f3f3;
     text-decoration: none;
-
-    &:hover {
-      color: $masthead-link-color-hover;
-    }
 
     &.site-logo {
       margin-left: 0;
