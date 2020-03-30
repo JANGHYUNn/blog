@@ -33,7 +33,7 @@ JavaScript
 변수 선언과 함수 선언을 끌어올린다
 자바스크립트 엔진은 선언한(변수,함수) 내용이 있는지 살펴보고 있는족족 위로 끌어올린다.
 함수표현식은 선언문만 올라간다.
-![hoisting](./assets/image/hoisting.png)
+![hoisting](https://user-images.githubusercontent.com/42684735/77889705-399f4480-72a9-11ea-9874-f02a6ebb9e2f.png)
 왠만하면 함수표현식으로 선언 할것 이유는 다른 개발자와 협업시 함수선언문으로 작성할 시 중첩되는 네이밍이있을경우 호이스팅으로인해
 맨마지막에 선언된 함수로 덮어씌어질수 있기때문
 
@@ -50,6 +50,7 @@ es6에서는 이러한 예측가능성이나 성능상에 이유로 function이�
 
 실행컨텍스트에는
 *호이스팅이 이루어진 후에 본문내용과 this바인딩 등의 정보가 담긴다.
+![context](https://user-images.githubusercontent.com/42684735/77889804-694e4c80-72a9-11ea-8ba1-7fba873f5a37.png)
 
 method
 함수처럼 생겼는데 앞에 .이 붙어있으면 method라 생각하면됨
