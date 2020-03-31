@@ -139,8 +139,77 @@ private member를 만드는것은 첫번째로 외부에서 접근을 못하게 
 CLOSER를 활용해서 private멤버와 public멤버를 구분하는 방법
 ![privateMember](https://user-images.githubusercontent.com/42684735/78019778-2c5a8680-738b-11ea-9c1e-e3694b325068.png)
 
+# PROTOTYPE
+자바스크립트는 클래스라는 개념이 없다.<br/>
+그래서 기존의 객체를 복사해서 새로운 객체를 생성하는 프로토타입 기반의 언어이다.<br/>
+객체 원형인 프로토타입을 이용하여 새로운 객체를 만들어낸다.
 
+사진!!!!
+생성자 함수가 있을때 new연산자를 이용하여 instance를 만들면<br/>
+생성자 함수에 prototype이라는 property가 instance에 __proto__라고하는 property에 전달이 된다.<br/>
+즉 생성자 함수에 prototype과 instance에 __proto__는 같은 객체를 참조한다.
 
+그런데__proto__는 내부 property에 접근할때 __proto__단어를 생략할 수 있다.<br/>
+밑에사진처럼 연결된것 처럼 동작할 수 있다.
+사진!!!
+
+prototype 접근 방식
+사진!!!
+
+constroctor 접근 방식
+사진!!!
+
+# 메소드 상속 및 동작 원리
+```javascript
+function Person(n, a) {
+    this.name = n;
+    this.age = a;
+}
+
+var gomu = new Person('고무곰', 30);
+var iu = new Person('아이유', 25);
+
+gomu.setOlder = function() {
+    this.age += 1;
+}
+gomu.getAge = function() {
+    return this.age;
+}
+iu.setOlder = function() {
+    this.age += 1;
+}
+iu.getAge = function() {
+    return this.age;
+```
+
+gomu, iu라는 Person객체를 참조하는 인스턴스를 만들고 각 인스턴스에<br/>
+두개의 setter, getter 메소드를 동일하게 만들었을때<br/>
+각 인스턴스마다 메소드를 만드는것은 비효율적!<br/>
+이런경우 아래처럼 Prototype을 이용하자
+
+```javascript
+function Person(n, a) {
+    this.name = n;
+    this.age = a;
+}
+
+Person.prototype.setOlder = function() {
+    this.age += 1;
+}
+Person.prototype.getAge = function() {
+    return this.age;
+}
+
+var gomu = new Person('고무곰', 30);
+var iu = new Person('아이유', 25);
+```
+set,get 메소드를 prototype으로 이동시킴
+
+주의할 점 gomu.__proto__.setOlder() 처럼 접근하면 Nan(Not a number)가 나온다.<br/>
+이유는 setOlder는 메소드이기때문에 점(.)기준 뒤(gomu.__proto__)를 this로 인식하기 때문.
+
+__proto__ 는 생략이 가능하기때문에 마지 자신의 것 처럼 메소드를 호출할 수 있기때문에<br/>
+gomu.setOlder()로 호출하면된다. 이러면 this는 gomu가 되기때문에 정상출력
 
 
 
