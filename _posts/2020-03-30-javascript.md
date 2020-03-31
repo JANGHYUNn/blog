@@ -128,15 +128,15 @@ getter와 setter를 어떻게 setting 하느냐에따라서 말이다.<br/>
 CLOSER 동작흐름
 ![closer4](https://user-images.githubusercontent.com/42684735/78019763-2795d280-738b-11ea-9bbf-92f38aa6f6cb.png)
 
-# CLOSER로 private member 만들기
+# CLOSURE로 private member 만들기
 JAVA나 여러언어들은 method나 여러 변수들을 private 하게 만들수있는 기능들을 제공하고있다.<br/>
 javascript는 태생적으로 그런 기능들을 제공하고있지않다.<br/>
-하지만 CLOSER를 활용하면 흉내낼수는 있다.
+하지만 CLOSURE를 활용하면 흉내낼수는 있다.
 
 private member를 만드는것은 첫번째로 외부에서 접근을 못하게 하는것 뿐만이 아니라<br/>
 두번째로 전역스코프에 변수를 최소화 하는도에도 도움이된다.
 
-CLOSER를 활용해서 private멤버와 public멤버를 구분하는 방법
+CLOSURE를 활용해서 private멤버와 public멤버를 구분하는 방법
 ![privateMember](https://user-images.githubusercontent.com/42684735/78019778-2c5a8680-738b-11ea-9c1e-e3694b325068.png)
 
 # PROTOTYPE
