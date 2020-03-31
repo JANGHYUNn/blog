@@ -144,20 +144,20 @@ CLOSER를 활용해서 private멤버와 public멤버를 구분하는 방법
 그래서 기존의 객체를 복사해서 새로운 객체를 생성하는 프로토타입 기반의 언어이다.<br/>
 객체 원형인 프로토타입을 이용하여 새로운 객체를 만들어낸다.
 
-사진!!!!
+![prototype1](https://user-images.githubusercontent.com/42684735/78057028-06e86f80-73c1-11ea-9894-7fcc2b3b23c9.png)
 생성자 함수가 있을때 new연산자를 이용하여 instance를 만들면<br/>
 생성자 함수에 prototype이라는 property가 instance에 __proto__라고하는 property에 전달이 된다.<br/>
 즉 생성자 함수에 prototype과 instance에 __proto__는 같은 객체를 참조한다.
 
 그런데__proto__는 내부 property에 접근할때 __proto__단어를 생략할 수 있다.<br/>
 밑에사진처럼 연결된것 처럼 동작할 수 있다.
-사진!!!
+![prototype3](https://user-images.githubusercontent.com/42684735/78057047-0ea81400-73c1-11ea-8351-90b57d5818d3.png)
 
 prototype 접근 방식
-사진!!!
+![prototype4](https://user-images.githubusercontent.com/42684735/78057067-136cc800-73c1-11ea-92cd-b719d8685d26.png)
 
-constroctor 접근 방식
-사진!!!
+constructor 접근 방식
+![constructor](https://user-images.githubusercontent.com/42684735/78057078-18317c00-73c1-11ea-9286-0f4bdd75aa00.png)
 
 # 메소드 상속 및 동작 원리
 ```javascript
