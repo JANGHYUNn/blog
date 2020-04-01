@@ -129,6 +129,7 @@ CLOSER 동작흐름
 ![closer4](https://user-images.githubusercontent.com/42684735/78019763-2795d280-738b-11ea-9bbf-92f38aa6f6cb.png)
 
 # CLOSURE로 private member 만들기
+
 JAVA나 여러언어들은 method나 여러 변수들을 private 하게 만들수있는 기능들을 제공하고있다.<br/>
 javascript는 태생적으로 그런 기능들을 제공하고있지않다.<br/>
 하지만 CLOSURE를 활용하면 흉내낼수는 있다.
@@ -210,6 +211,32 @@ set,get 메소드를 prototype으로 이동시킴
 
 __proto__ 는 생략이 가능하기때문에 마지 자신의 것 처럼 메소드를 호출할 수 있기때문에<br/>
 gomu.setOlder()로 호출하면된다. 이러면 this는 gomu가 되기때문에 정상출력
+
+# PROTOTYPE CHAINING
+Array 객체를 생성하게되면 생성자 함수를 통해 protorype이 생성이되는데 prototype은 객체이기때문에<br/>
+prototype은 new 연산자를통해 Object의 instance가 되고 Object의 prototype을 상속받게된다.<br/>
+Array는 Object의 prototype마저 자신의 것 처럼 사용할 수 있게된다.<br/>
+![prototype-chaining1](https://user-images.githubusercontent.com/42684735/78185598-4d63ca00-74a6-11ea-8003-87c1628ae6e1.png)
+빨간색선이 연결된것을 PROTOTYPE CHAINING이라고 한다.
+
+# CLASS
+공통된 속성을 지닌 구체적인대상을 instance라고한다.<br/>
+instance들의 공통속성을 모은 추상적인 개념이 class이다.
+![class1](https://user-images.githubusercontent.com/42684735/78185585-4a68d980-74a6-11ea-8a8e-21272df5713e.png)
+
+예를들어 Array를 리터럴로 생성했다고하면<br/> 
+Array.prototype property 내부에 할당되지 않고 Array 생성자 함수에 객체에 직접 할당되어있는<br/>
+property들을 static methids, static properties 라고 한다.
+![class2](https://user-images.githubusercontent.com/42684735/78185595-4c329d00-74a6-11ea-89b9-d6ab76e8526d.png)
+
+생성자(class) 함수의 prototype property는 인스턴스의 __proto__로 연결이되어있고<br/>
+생략이 가능하기 때문에 class의 prototype methods에 다이렉트로 접근이 가능하지만<br/>
+생성자(class)함수내부에 properties, methods는 다이렉트로 접근할 방법이 없다.
+![class3](https://user-images.githubusercontent.com/42684735/78185596-4ccb3380-74a6-11ea-8ea3-d687a3336fa4.png)
+ 
+
+
+
 
 
 
