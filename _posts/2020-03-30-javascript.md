@@ -28,6 +28,8 @@ JavaScript
     
 값이 저장된 주소값 할당(참조)
 
+
+
 # 호이스팅(끌어올리다)
 
 변수 선언과 함수 선언을 끌어올린다<br/>
@@ -44,14 +46,24 @@ es6에서는 이러한 예측가능성이나 성능상에 이유로 function이�
 
 # 함수스코프, 실행컨텍스트
 함수스코프 = 유효범위(변수)<br/>
-실행 컨텍스트 = 실행되는 코드덩어리(추상적 개념)
+실행 컨텍스트 = 실행되는 코드덩어리(추상적 개념) 함수 실행할 때 필요한 조건/ 환경정보
 
 둘의 차이는 스코프는 정의될때 결정된다<br/>
-실행컨텍스트는 실행될때 생성된다
+실행컨텍스트는 실행될때 생성된다.<br/>
+실행에대한 관여하는 stack을 call stack이라한다.<br/>
+callStack : 현재 어떤 함수가 동작하고 있는지, 다음에 어떤 함수가 호출되어야하는지 등을 제어하는 자료구조.
+
 
 실행컨텍스트에는<br/>
-*호이스팅이 이루어진 후에 본문내용과 this바인딩 등의 정보가 담긴다.<br/>
-![hoisting](https://user-images.githubusercontent.com/42684735/77889705-399f4480-72a9-11ea-9874-f02a6ebb9e2f.png)
+<strong style="color:red;">environmentRecord, outerEnvironmentReference 가있다.<br/>
+environmentRecord는 현재 문맥상 선언되어있는 식별자 정보를 실제로 위로끌어올려 수집한다. 이 모습을 보고 <br/>
+호이스팅이란 추상적 개념을 만든것이다.<br/>
+outerEnvironmentReference는 현재 실행 컨텍스트의 관련되어있는 외부의 실행 컨텍스트에 식별자 정보를 수집한것에만 접근할 수 있다.<br/>
+즉 scope(유효범위) chain<br/>
+호이스팅이 이루어진 후에 본문내용과 this바인딩 등의 정보가 담긴다.</strong>
+
+![hoisting](https://user-images.githubusercontent.com/42684735/77889705-399f4480-72a9-11ea-9874-f02a6ebb9e2f.png) 
+
 
 # Method
 함수처럼 생겼는데 앞에 .이 붙어있으면 method라 생각하면됨<br/>
