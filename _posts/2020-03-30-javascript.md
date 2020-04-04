@@ -107,7 +107,6 @@ ex 객체 {
 
 # call / apply / bind
 
-func를 호출하는데 this는 예로인식하게해줘,<br/>
 func.call(this는 예로 인식하게해줘, 무한대로 인자넣을수있음) -- 즉시 호출<br/> 
 func.aplly(this는 예로 인식하게해줘, 배열) -- 즉시 호출<br/>
 func.bind(this는 예로 인식하게해줘, ...) -- 새로운 함수를 생성, 호출은 하지않음<br/>
