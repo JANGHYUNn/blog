@@ -114,6 +114,11 @@ func.bind(this는 예로 인식하게해줘, ...) -- 새로운 함수를 생성,
 콜백함수에서 : 기본적으로는 함수의 this와 같다 (window), 제어권을 가진 함수가 callback의 this를 명시한 경우 그에 따른다.<br/>
 하지만 개발자가 this를 바인딩한 채로 callback 을 넘기면 그에 따른다
 
+# callBack function
+![callback](https://user-images.githubusercontent.com/42684735/78457629-a0c45b00-76e6-11ea-8563-004c9f566207.png)
+제어권을 넘긴다.
+
+
 # CLOSURE
 클로저란 함수 내부에서 생성한 데이터와 그 유효범위로 인해 발생하는 특수한 현상 / 상태 <br/>
 최초 선언시의 정보를 유지!
