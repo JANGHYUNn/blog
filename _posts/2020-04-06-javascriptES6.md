@@ -111,3 +111,58 @@ arr.forEach(function(v) {
     v();
 })
 ```
+
+Const(상수) 는 선언시 할당도 이루어져야한다.<br/>
+재할당은 안된다.<br/>
+참조형 데이터를 상수로 할당할 경우 내부에 있는 데이터는 상수가 아니다.<br/>
+```javascript
+const obj = {
+    a: 1,
+    b: 2
+}
+obj = 20; // X
+obj.a = 4; // O
+
+const arr = [
+    1,
+    2,
+    3
+]
+arr = 'str'; // X
+arr.push(4); // O
+```
+상수(const) 내부에 있는 데이터도 변경할수없게 하려면<br/>
+Object.freez, Object.defineProperty 두가지의 메소드를 사용하여 변경할 수 없게 할수있다.
+```javascript
+const OBJ = {
+    prop1: 'prop1',
+    prop2: [1, 2, 3],
+    prop3: {'A', 'B', 'C'}
+}
+Object.freez(OBJ);
+// 하지만 상수안에 프로퍼티중 참조값을 가지는 타입이있다면 안으로 한번더 들어가서 또 얼려줘야한다.
+Object.freez(OBJ.prop2);
+// 1) OBJ 자체를 얼린다.
+// 2) OBJ 내부의 프로퍼티들을 순회하면서, 혹시 참조형이면, 1)반복 -> 재귀
+// DeepFreezing 이라고 한다.
+```
+
+얕은복사: 객체의 프로퍼티들을 복사 (depth 1단계까지만)<br/>
+깊은복사: 객체의 프로퍼티들을 복사 (모든 depth에 대해서)
+
+```javascript
+var a = {
+    a: 1,
+    b: [1, 2, 3],
+    c: {d: 1, e: 2}
+}
+var b = Object.assign({}, a); // 얕은 복사 1depth 프로퍼티만 복사.
+// a.b, a.c 참조형 데이터이기때문에 얕은 복사를 할 경우 a.b 와 b.b가 같은 참조값을 가리키고있어
+// b.b를 변경할 경우 a.b 도 같이 변경된다.
+
+b.b = Object.assign([], a.b); // 깊은 복사
+```
+1) 프로퍼티들을 복사한다.<br/>
+2) 프로퍼티들 중에 참조형이 있으면, 1)반복 .재귀
+
+깊은복사를 해야만 immutable(불변객체) 하다. 매번 새로운객체를 생성하기 위해서 늘 깊은복사를 해야한다.
