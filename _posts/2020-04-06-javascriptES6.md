@@ -151,6 +151,7 @@ Object.freez(OBJ.prop2);
 깊은복사: 객체의 프로퍼티들을 복사 (모든 depth에 대해서)
 
 ```javascript
+
 var a = {
     a: 1,
     b: [1, 2, 3],
