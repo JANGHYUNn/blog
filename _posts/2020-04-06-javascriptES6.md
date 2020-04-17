@@ -167,3 +167,24 @@ b.b = Object.assign([], a.b); // 깊은 복사
 2) 프로퍼티들 중에 참조형이 있으면, 1)반복 .재귀
 
 깊은복사를 해야만 immutable(불변객체) 하다. 매번 새로운객체를 생성하기 위해서 늘 깊은복사를 해야한다.
+ 
+# forEach, map, reduce
+자바스크립트에 메소드의 인자는 중요한 순서대로 나열한 것이다.
+
+forEach: for문을 돌리는거랑 같은 개념.<br/>
+map: fot문을 돌려서 새로운 배열을 만드는 목적.<br/>
+reduce: for문을 돌려서 최종적으로 다른 무언가를 만드는 목적.<br/>
+
+```javascript
+//reduce 예시
+const a = [1,2,3,4,5,6,7,8,9,10];
+const result = a.reduce(function(p, c) {
+    return p+v;
+    }//{},'' 초기값을 어떻게 주느냐에 따라 문자열을 만들수도있구 객체를 반환할수도 있다.
+    );
+console.log(result) // 55
+//reduce 메소드의 첫번째 인자는 누적된 결과값이닷. 순회를 돌면서 계속 누적시킨 값이 나온다.
+
+
+```
+
