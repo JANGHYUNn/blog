@@ -185,6 +185,16 @@ const result = a.reduce(function(p, c) {
 console.log(result) // 55
 //reduce 메소드의 첫번째 인자는 누적된 결과값이닷. 순회를 돌면서 계속 누적시킨 값이 나온다.
 
+# tag function
 
+```javascript
+const tag = function(str, ...arg) {
+    return {str: str, args:[arg]}
+}
+const res = tag`안녕하세요 ${1} 입니다 ${2}`
+```
+위처럼 template literal 을 이용하여 tag function 문법을 사용할 수 있다.<br/>
+tag function은 인자로 넘어온것 중에 문자열은 첫번째인자가 다받고 나머지 보간법에 들어간 인자는<br/>
+첫번째를 제외한 인자들이 받는다.
 ```
 
