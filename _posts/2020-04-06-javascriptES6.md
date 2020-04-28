@@ -184,7 +184,7 @@ const result = a.reduce(function(p, c) {
     );
 console.log(result) // 55
 //reduce 메소드의 첫번째 인자는 누적된 결과값이닷. 순회를 돌면서 계속 누적시킨 값이 나온다.
-
+```
 # tag function
 
 ```javascript
@@ -196,5 +196,26 @@ const res = tag`안녕하세요 ${1} 입니다 ${2}`
 위처럼 template literal 을 이용하여 tag function 문법을 사용할 수 있다.<br/>
 tag function은 인자로 넘어온것 중에 문자열은 첫번째인자가 다받고 나머지 보간법에 들어간 인자는<br/>
 첫번째를 제외한 인자들이 받는다.
+
+# default parameter
+```javascript
+const fnc = function(a = 1, b = 2, c = 3) {
+    console.log(a, b, c);
+}
+// default paramter 함수나, 메소드에 기본값을 지정해줄수 있다.
+// 단 undefined, 누락된 인자에만 적용이돤다.
+
+function(a = 1, b = a + 1)
+// 이런식으로 연산도 가능하다
+
+function fn() {
+    return 10;
+}
+function(a = fn())
+// 이런식으로 함수 호출도 가능하다.
 ```
+
+# spread operator(펼침 연산자)
+...연산자를 이용하여 새로운 배열을 만든다.<br/>
+얕은 복사만 이루어진다.
 
