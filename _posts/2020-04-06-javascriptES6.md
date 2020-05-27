@@ -219,3 +219,8 @@ function(a = fn())
 ...연산자를 이용하여 새로운 배열을 만든다.<br/>
 얕은 복사만 이루어진다.
 
+# Arrow function(화살표 함수)
+arrow 함수는 실행컨텍스트가 실행 될때 this 를 바인딩 하지 않는다.<br/>
+바인딩 하지 않기때문에 외부스코프에서 찾는다.<br/>
+arrow function은 '함수 스코프' 를 생성한다. 다만, 실행컨텍스트 생성시 this 바인딩X<br/>
+arrow function은 생성자 함수로 사용하지 못한다. prototype property가 없다.
