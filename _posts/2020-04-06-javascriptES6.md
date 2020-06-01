@@ -222,5 +222,78 @@ function(a = fn())
 # Arrow function(화살표 함수)
 arrow 함수는 실행컨텍스트가 실행 될때 this 를 바인딩 하지 않는다.<br/>
 바인딩 하지 않기때문에 외부스코프에서 찾는다.<br/>
-arrow function은 '함수 스코프' 를 생성한다. 다만, 실행컨텍스트 생성시 this 바인딩X<br/>
+arrow function은 '함수 스코프' 를 생성한다. 다만, 실행컨텍스트 생성시 this 바인딩 하지않음<br/>
 arrow function은 생성자 함수로 사용하지 못한다. prototype property가 없다.
+
+# 메소드 축약형
+기존 메소드를 function 이란 키워드를 제거하여 사용할 수 있다.
+```javascript
+
+const obj = {
+    init: function() {} // 기존 메소드 
+    init2 () {} // 메소드 축약형
+}
+
+```
+메소드 축약형을 사용할 경우 super라는 상위의 프로토타입을 부를 수 있는 키워드를 사용할 수 있다.<br>
+기존에는 상위의 프로토를 호출하려면 Person.__proto__.function() 이런식이었지만<br>
+간결하게 super.function()으로 호출할 수 있다.
+
+prototype 프로퍼티가 없어 좀더 빠르고 생성자 함수로 사용할 수 없다.
+
+# destructuring assignment(해체할당)
+* 배열의 해체 할당
+```javascript
+
+const arr = [1,2,3,4,5];
+const [a, ...b] = [arr];// a=1 , b[2,3,4,5]
+
+
+const arr2 = [1,2];
+const [c = 10, d = 20, e] = arr2;
+// default parameter 사용 가능 하다. 
+// 만약 할당할 자리에 아무것도 없으면 undefined를 할당한다.
+```
+
+* 객체 해체할당
+배열 객체 할당과 비슷하다.
+```javascript
+
+const iu = {
+  name: '아이유',
+  age: 25,
+  gender: 'female'
+}
+
+const {
+    name,
+    age,
+    gender
+}
+console.log(name,age,gender); // 아이유 25 femail
+
+const {
+  name: a,
+  age: b,
+  gender: c
+}= iu
+
+console.log(a, b, c); // 아이유 25 femail
+
+```
+함수나 메소드에서 바로 해체할당을 할수있어 잘 사용하면 유용하다.
+
+```javascript
+function fnc ({width, height}) {
+    return width * height;
+}
+
+const info = {
+    width: 10,
+    height: 20
+}
+
+fnc(info) // 200
+
+```
+
