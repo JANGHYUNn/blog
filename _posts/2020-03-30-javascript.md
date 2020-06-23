@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "JavaScript"
+title: "Javascript"
 ---
 
-JavaScript
+Javascript
 ==========
 
 # 기본형과 참조형의 종류 및 차이점

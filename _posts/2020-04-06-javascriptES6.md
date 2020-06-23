@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "JavaScriptES6"
+title: "JavascriptES6"
 ---
 
-JavaScriptES6
+JavascriptES6
 ==========
 # Block Scope
 javascript 기존 es5까지는 함수 스코프만 존재햐였다.<br/>
