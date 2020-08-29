@@ -359,5 +359,24 @@ fnc(info) // 200
         console.log(k, obj[k])
     })
   ```
+  * Symbol([string]) 선언시 문자열을 넣어도되고 안넣어도 된다.
+  ## Symbol.for()
+  * Symbol의 정반대 개념
+  * Public한 Symbol
+  * Symbol.for(string) 필수로 string 값을 넣어줘야 한다. 생략시 undefined가 할당된다.
+  * 식별하는 방법이 할당시 넣어준 string값만 가지고 식별한다.
+  ```js
+  const a = Symbol.for('abc')
+  const b = Symbol.for('abc')
 
+  a === b // true
+  ```
+  * Symbol.for() 만의 전역공간이 따로있어 선언시 먼저 전역공간에서 string 값을 찾아서 할당해주고 없으면 새로 만들기때문에 위와 같이 a와b는 true가 나온다.
 
+## Symbol.keyFor
+* Symbol.for 로 선언된 친구들에 key 값을 가져온다 
+  ```js
+    const a = Symbol.for('A입니다')
+
+    console.log(Symbol.keyFor(a))// 'A입니다'
+  ```
