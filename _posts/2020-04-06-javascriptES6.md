@@ -297,3 +297,67 @@ fnc(info) // 200
 
 ```
 
+# Symbol
+## es6 이후부터 새로 추가된 기본형 데이터 타입
+ * 비공개 멤버에 대한 needs에서 탄생
+ * 기본적인 열거대상에서 제외 
+  ```js
+    const obj = {
+        [Symbol('1')]: true,
+        a: false,
+        b: true,
+    }
+
+    // for문으로 순회시 symbol타입은 제외시킴
+  ```
+  * new 없이 생성 Symbol() 만들때 마다 매번 새로운 친구
+  * 암묵적 형변환 불가.
+  ```js
+    const x = () => {
+        const a = Symbol('a');
+        return {
+            [a]: 10,
+            b: 20,
+        }
+    }
+
+    const y = x()
+    // a에 담긴 값을 객체로 리턴해주고있지만 y는 b:20 만 담긴 객체를
+    // return 받게된다. Symbol타입은 return 안에 포함 되어있어도 제외 된다는걸 알수있다.
+    // 하지만 a자체를 return해주면 접근이 가능해진다.
+    // 은닉화 할지 안할지를 정할 수 있다.
+  ```
+  * private member 만들기
+  ```js
+    const obj = (() => {
+        const private1 = Symbol('private1')
+        const private2 = Symbol('private2')
+
+  
+    return {
+        [private1]: 'private1 입니다',
+        [private2]: 'private2 입니다',
+        a: 10,
+        b: 20,
+    }
+    })()
+
+    // 즉시 실행 함수를 이용하여 함수스코프로 만들어 private member를 만들수 있다. private member 를 만드는 큰 이유는 실수방지를 위해서이다.
+
+    console.log(obj)
+    // [object Object] {
+    //    a: 10,
+    //    b: 20
+    // }
+
+    // 아래 방법들로 접근 가능하나, 번거롭고 정상적인 접근이라고 보기 힘듬.
+    Object.getOwnPropertySymbols(obj).forEach(k => {
+        console.log(k, obj[k])
+    })
+
+    Reflect.ownKeys(obj).forEach(k => {
+        console.log(k, obj[k])
+    })
+  ```
+
+
